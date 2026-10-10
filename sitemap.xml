@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Persian Homepage -->
+  <url>
+    <loc>https://coversland.ir/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://coversland.ir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coversland.ir/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coversland.ir/"/>
+    <image:image>
+      <image:loc>https://coversland.ir/coversland_logo_final.jpg</image:loc>
+      <image:title>لوگوی برند کاورزلند CoversLand</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://coversland.ir/mockup_packaging_coversland.jpg</image:loc>
+      <image:title>بسته‌بندی روکش‌های یکبار مصرف کاورزلند</image:title>
+    </image:image>
+  </url>
+
+  <!-- Persian Core Pages -->
+  <url>
+    <loc>https://coversland.ir/products.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://coversland.ir/prod_pouvar.jpg</image:loc>
+      <image:title>روکش پوآر دندانپزشکی شیری و شفاف کاورزلند</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://coversland.ir/prod_suction_rvg.jpg</image:loc>
+      <image:title>روکش ساکشن جراحی و سنسور RVG کاورزلند</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://coversland.ir/prod_dental_chair_cover.jpg</image:loc>
+      <image:title>کاور ۳ تکه یونیت دندانپزشکی کاورزلند</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://coversland.ir/prod_dental_tray_disposable.jpg</image:loc>
+      <image:title>سینی یکبار مصرف دندانپزشکی و روکش سینی لمینت کاورزلند</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://coversland.ir/prod_lamp_handle_cover.jpg</image:loc>
+      <image:title>کاور دسته چراغ و لامپ یونیت دندانپزشکی کاورزلند</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://coversland.ir/prod_dentist_protective_gown.jpg</image:loc>
+      <image:title>روپوش و گان محافظ بهداشتی دندانپزشک کاورزلند</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://coversland.ir/order.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://coversland.ir/articles.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://coversland.ir/about.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://coversland.ir/contact.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- English Homepage -->
+  <url>
+    <loc>https://coversland.ir/en/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coversland.ir/en/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://coversland.ir/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coversland.ir/"/>
+    <image:image>
+      <image:loc>https://coversland.ir/coversland_logo_final.jpg</image:loc>
+      <image:title>CoversLand Dental Disposables Logo</image:title>
+    </image:image>
+  </url>
+
+  <!-- Persian Articles -->
+  <url>
+    <loc>https://coversland.ir/articles/disposable-air-water-syringe-sleeves.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://coversland.ir/articles/disposable-air-water-syringe-sleeves.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coversland.ir/en/articles/disposable-air-water-syringe-sleeves.html"/>
+  </url>
+
+  <url>
+    <loc>https://coversland.ir/articles/dental-suction-tube-sleeves-guide.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://coversland.ir/articles/dental-suction-tube-sleeves-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coversland.ir/en/articles/dental-suction-tube-sleeves-guide.html"/>
+  </url>
+
+  <url>
+    <loc>https://coversland.ir/articles/rvg-sensor-sleeves-protection.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://coversland.ir/articles/rvg-sensor-sleeves-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coversland.ir/en/articles/rvg-sensor-sleeves-protection.html"/>
+  </url>
+
+  <url>
+    <loc>https://coversland.ir/articles/dental-chair-unit-protective-covers.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://coversland.ir/articles/dental-infection-control-disposables.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://coversland.ir/articles/how-to-buy-dental-disposables-wholesale.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- English Articles -->
+  <url>
+    <loc>https://coversland.ir/en/articles/disposable-air-water-syringe-sleeves.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coversland.ir/en/articles/disposable-air-water-syringe-sleeves.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://coversland.ir/articles/disposable-air-water-syringe-sleeves.html"/>
+  </url>
+
+  <url>
+    <loc>https://coversland.ir/en/articles/dental-suction-tube-sleeves-guide.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coversland.ir/en/articles/dental-suction-tube-sleeves-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://coversland.ir/articles/dental-suction-tube-sleeves-guide.html"/>
+  </url>
+
+  <url>
+    <loc>https://coversland.ir/en/articles/rvg-sensor-sleeves-protection.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coversland.ir/en/articles/rvg-sensor-sleeves-protection.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://coversland.ir/articles/rvg-sensor-sleeves-protection.html"/>
+  </url>
+
+</urlset>

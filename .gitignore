@@ -1,0 +1,9 @@
+﻿# Archives
+*.zip
+*.rar
+*.bak
+
+# Temporary / OS
+Thumbs.db
+[Dd]esktop.ini
+*.tmp

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api.php
+
+# Sitemaps
+Sitemap: https://coversland.ir/sitemap.xml

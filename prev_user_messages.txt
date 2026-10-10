@@ -1,0 +1,31 @@
+=== USER ===
+<USER_REQUEST>
+کدوم مدل زبانی شما با تصویر بهتر کار می کند
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-14T11:26:15+03:30.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.8 Flash (Medium). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+=== USER ===
+<USER_REQUEST>
+خب من یک تصویر ارسال می کنم تار شدگیهارو اصلا ح کن یکم خوشگلش کن سایزها رو اصلاح کن بهم یکم نمونه بده 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-14T11:28:22+03:30.
+</ADDITIONAL_METADATA>
+=== USER ===
+<USER_REQUEST>
+صبر کن . افتضاح بودی من میخوام همون تصویر باشه . اینا چیه تصویر نساز همون ها یکم اصلاح اینها برچسب هست باید در هر آ چهار شش تا چاپ بشه
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-14T11:31:27+03:30.
+</ADDITIONAL_METADATA>
+=== USER ===
+<USER_REQUEST>
+ادامه 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-14T11:33:55+03:30.
+</ADDITIONAL_METADATA>

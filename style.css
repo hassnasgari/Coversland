@@ -1,0 +1,3703 @@
+/* ==========================================================================
+   CoversLand (کاورزلند) - Apple Design System Edition
+   Ultra-Refined Aesthetics inspired by Apple (Frosted Glass, Bento Cards, High Contrast)
+   ========================================================================== */
+
+:root {
+  /* Apple Color Palette - Light Mode */
+  --apple-bg: #f5f5f7;              /* Apple matte titanium/silver */
+  --apple-card: #ffffff;            /* Pure clean card */
+  --apple-alt: #e8e8ed;             /* Soft secondary surface */
+  --apple-text: #1d1d1f;            /* Apple signature high-contrast dark */
+  --apple-text-secondary: #424245;  /* High-contrast secondary text (Rule 99 compliant) */
+  --apple-blue: #0071e3;            /* Apple iconic action blue */
+  --apple-blue-hover: #0077ed;
+  --apple-blue-glow: rgba(0, 113, 227, 0.22);
+  --apple-emerald: #059669;         /* High-contrast medical green */
+  --apple-border: rgba(0, 0, 0, 0.08);
+  --apple-nav-bg: rgba(245, 245, 247, 0.82);
+  --apple-pill-bg: rgba(0, 0, 0, 0.05);
+
+  /* Legacy Mappings to Apple Tokens */
+  --primary-navy: var(--apple-text);
+  --primary-navy-dark: #121214;
+  --accent-cyan: var(--apple-blue);
+  --accent-teal: #0891b2;
+  --accent-emerald: var(--apple-emerald);
+  --accent-amber: #b45309;
+  
+  /* Text & Readability (Rule 99: High Contrast, No pale gray text) */
+  --text-dark: var(--apple-text);
+  --text-muted: var(--apple-text-secondary);
+  --text-body: var(--apple-text);
+  --text-white: #ffffff;
+  
+  /* Backgrounds & Borders */
+  --bg-page: var(--apple-bg);
+  --bg-card: var(--apple-card);
+  --bg-alt: var(--apple-alt);
+  --bg-cyan-soft: rgba(0, 113, 227, 0.06);
+  --border-light: var(--apple-border);
+  --border-focus: var(--apple-blue);
+  
+  /* Apple Elevation & Hairline Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 16px 36px rgba(0, 0, 0, 0.09), 0 2px 6px rgba(0, 0, 0, 0.03);
+  --shadow-glow: 0 0 20px var(--apple-blue-glow);
+  
+  /* Apple Bento & Pill Geometry */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  
+  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Vazirmatn", "Segoe UI", Roboto, Tahoma, sans-serif;
+  --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Apple OLED Pure Dark Mode (iPhone Keynote Pitch-Black Aesthetic)
+   ========================================================================== */
+[data-theme="dark"] {
+  /* Apple Color Palette - Dark Mode */
+  --apple-bg: #000000;              /* Pure OLED Black */
+  --apple-card: #161617;            /* Apple Bento Card Dark */
+  --apple-alt: #1d1d1f;             /* Apple Elevated Dark Surface */
+  --apple-text: #f5f5f7;            /* High-contrast crisp light */
+  --apple-text-secondary: #cbd5e1;  /* High-contrast readable muted text */
+  --apple-blue: #2997ff;            /* Apple Dark Mode Electric Blue */
+  --apple-blue-hover: #47a6ff;
+  --apple-blue-glow: rgba(41, 151, 255, 0.32);
+  --apple-emerald: #10b981;
+  --apple-border: rgba(255, 255, 255, 0.12);
+  --apple-nav-bg: rgba(0, 0, 0, 0.82);
+  --apple-pill-bg: rgba(255, 255, 255, 0.08);
+
+  /* Legacy Mappings to Dark Apple Tokens */
+  --primary-navy: var(--apple-text);
+  --primary-navy-dark: #000000;
+  --accent-cyan: var(--apple-blue);
+  --accent-teal: #2dd4bf;
+  --accent-emerald: var(--apple-emerald);
+  --accent-amber: #f59e0b;
+  
+  /* Text & Readability (High Contrast) */
+  --text-dark: var(--apple-text);
+  --text-muted: var(--apple-text-secondary);
+  --text-body: var(--apple-text);
+  --text-white: #ffffff;
+  
+  /* Backgrounds & Borders */
+  --bg-page: var(--apple-bg);
+  --bg-card: var(--apple-card);
+  --bg-alt: var(--apple-alt);
+  --bg-cyan-soft: rgba(41, 151, 255, 0.1);
+  --border-light: var(--apple-border);
+  --border-focus: var(--apple-blue);
+  
+  /* Elevation Shadows & Glow */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.85);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.65), 0 1px 3px rgba(255, 255, 255, 0.05);
+  --shadow-card-hover: 0 18px 48px rgba(0, 0, 0, 0.9), 0 2px 8px rgba(41, 151, 255, 0.15);
+  --shadow-glow: 0 0 28px var(--apple-blue-glow);
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  line-height: 1.75;
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Apple Typography - Precise, Elegant, High Contrast */
+h1 {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+h4, h5, h6 {
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-navy);
+  font-weight: 700;
+}
+
+p {
+  color: var(--text-body);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-center .section-title,
+.text-center .section-subtitle,
+.text-center h1,
+.text-center h2,
+.text-center p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--apple-blue) 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ltr-text {
+  direction: ltr;
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Arial, sans-serif;
+  font-weight: 600;
+}
+
+/* Apple Iconic Pill Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.96rem;
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--apple-blue);
+  color: #ffffff;
+  box-shadow: 0 2px 10px var(--apple-blue-glow);
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  background: var(--apple-blue-hover);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px var(--apple-blue-glow);
+  color: #ffffff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--apple-blue);
+  color: var(--apple-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--apple-blue);
+  color: #ffffff;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px var(--apple-blue-glow);
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background-color: #22c55e;
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+  color: #ffffff;
+}
+
+.btn-lg {
+  padding: 13px 30px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+  background-color: var(--primary-navy-dark);
+  color: #f8fafc;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.announcement-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+/* Main Header - Apple Iconic Frosted Glass */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--apple-nav-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--apple-border);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  gap: 16px;
+}
+
+/* Brand & Logo Sizing */
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.header-logo {
+  height: 44px;
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.header-logo:hover {
+  transform: scale(1.02);
+}
+
+/* Light / Dark Mode Logo Switcher */
+.logo-dark {
+  display: none !important;
+}
+
+.logo-light {
+  display: block !important;
+}
+
+[data-theme="dark"] .logo-light {
+  display: none !important;
+}
+
+[data-theme="dark"] .logo-dark {
+  display: block !important;
+}
+
+.logo-tagline {
+  display: none !important;
+}
+
+/* Category Badge: "روکش یکبار مصرف" */
+.category-pill-badge {
+  display: none;
+}
+
+/* Apple Navigation Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.nav-item {
+  color: var(--apple-text);
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  opacity: 0.85;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.nav-item::after {
+  display: none; /* Apple uses subtle pill backgrounds instead of underlines */
+}
+
+.nav-item:hover, .nav-item.active {
+  color: var(--apple-blue);
+  background-color: var(--apple-pill-bg);
+  opacity: 1;
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Language Switcher */
+.lang-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--apple-text);
+  background: var(--apple-pill-bg);
+  border: 1px solid var(--apple-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.lang-switch-btn:hover {
+  background: var(--apple-blue);
+  color: #ffffff;
+  border-color: var(--apple-blue);
+  transform: translateY(-1px);
+}
+
+/* Theme Toggle Button - Apple Circular Frosted Button */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--apple-border);
+  background: var(--apple-pill-bg);
+  color: var(--apple-text);
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--apple-blue);
+  color: var(--apple-blue);
+  transform: scale(1.05);
+}
+
+.theme-toggle-btn .sun-icon {
+  display: none;
+}
+
+.theme-toggle-btn .moon-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--apple-blue);
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 14px var(--apple-blue-glow);
+}
+
+[data-theme="dark"] .theme-toggle-btn .sun-icon {
+  display: block;
+  color: #f59e0b;
+}
+
+[data-theme="dark"] .theme-toggle-btn .moon-icon {
+  display: none;
+}
+
+/* Cart Button - Apple Circular Frosted Button */
+.cart-btn {
+  background-color: var(--apple-pill-bg);
+  border: 1px solid var(--apple-border);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  position: relative;
+  color: var(--apple-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.22s ease;
+}
+
+.cart-btn:hover {
+  background-color: var(--apple-pill-bg);
+  border-color: var(--apple-blue);
+  color: var(--apple-blue);
+  transform: scale(1.05);
+}
+
+.cart-count {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  background-color: #ef4444;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--apple-card);
+}
+
+/* Header WhatsApp CTA - Apple Pill */
+.header-cta {
+  font-size: 0.88rem;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background-color: var(--primary-navy);
+  border-radius: 2px;
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.mobile-nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--bg-card);
+  z-index: 999;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 24px;
+}
+
+.mobile-nav.active {
+  right: 0;
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.close-mobile-nav {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.mobile-link {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  padding: 8px 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.mobile-link:hover {
+  color: var(--accent-cyan);
+}
+
+/* ==========================================================================
+   Apple Sticky Subnav Ribbon (Cupertino Model Switcher & Jump Links)
+   ========================================================================== */
+.apple-subnav {
+  position: sticky;
+  top: 60px;
+  z-index: 95;
+  background: var(--apple-nav-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--apple-border);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.apple-subnav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.apple-subnav-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subnav-brand {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--apple-text);
+  letter-spacing: -0.01em;
+}
+
+.subnav-model {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--apple-blue);
+  background: var(--apple-pill-bg);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--apple-border);
+}
+
+.apple-subnav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.subnav-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.subnav-link:hover, .subnav-link.active {
+  color: var(--apple-blue);
+}
+
+.subnav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--apple-blue);
+  border-radius: 2px;
+}
+
+.subnav-btn {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  background-color: var(--apple-blue);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2px 8px var(--apple-blue-glow);
+}
+
+.subnav-btn:hover {
+  background-color: var(--apple-blue-hover);
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px var(--apple-blue-glow);
+}
+
+@media (max-width: 768px) {
+  .apple-subnav-links {
+    gap: 10px;
+  }
+  .subnav-link:not(.active) {
+    display: none;
+  }
+}
+
+/* Hero Section - Apple Keynote Aesthetic */
+.hero-section {
+  padding: 80px 0 85px;
+  background: radial-gradient(circle at 15% 15%, rgba(0, 113, 227, 0.07) 0%, transparent 45%),
+              radial-gradient(circle at 85% 85%, rgba(5, 150, 105, 0.06) 0%, transparent 45%);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .hero-section {
+  background: radial-gradient(circle at 15% 15%, rgba(41, 151, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--apple-pill-bg);
+  color: var(--apple-blue);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+  border: 1px solid var(--apple-border);
+  letter-spacing: 0.02em;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--apple-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(0, 113, 227, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 113, 227, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 113, 227, 0); }
+}
+
+.hero-title {
+  font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  color: var(--apple-text);
+  font-weight: 800;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 26px;
+  color: var(--apple-text-secondary);
+}
+
+.hero-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 34px;
+}
+
+.feat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--apple-text);
+  background: var(--apple-card);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--apple-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.feat-item svg {
+  color: #059669;
+  flex-shrink: 0;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 38px;
+  flex-wrap: wrap;
+}
+
+.trust-counter {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: var(--apple-card);
+  padding: 16px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--apple-border);
+  box-shadow: var(--shadow-card);
+  width: fit-content;
+  transition: var(--transition);
+}
+
+.counter-box {
+  text-align: center;
+}
+
+.counter-num {
+  display: block;
+  font-size: 1.7rem;
+  color: var(--apple-blue);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.counter-lbl {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+}
+
+.counter-divider {
+  width: 1px;
+  height: 38px;
+  background-color: var(--apple-border);
+}
+
+/* Hero Image Showcase - Apple Bento Card */
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card-hover);
+  border: 1px solid var(--apple-border);
+  background-color: var(--apple-card);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14);
+}
+
+[data-theme="dark"] .hero-image-card:hover {
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.95);
+}
+
+.hero-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-image-card:hover .hero-main-img {
+  transform: scale(1.03);
+}
+
+/* Apple Floating Frosted Glass Badges */
+.floating-badge {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+[data-theme="dark"] .floating-badge {
+  background: rgba(22, 22, 23, 0.85);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.floating-badge:hover {
+  transform: scale(1.05);
+}
+
+.badge-top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.badge-bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.badge-num {
+  display: block;
+  font-weight: 800;
+  color: var(--apple-blue);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.badge-sub {
+  font-size: 0.78rem;
+  color: var(--apple-text);
+  font-weight: 600;
+}
+
+/* Categories Section - Apple Clean Surface */
+.categories-section {
+  padding: 50px 0;
+  background-color: var(--apple-card);
+  border-top: 1px solid var(--apple-border);
+  border-bottom: 1px solid var(--apple-border);
+  transition: var(--transition);
+}
+
+.section-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  margin-bottom: 10px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--apple-text);
+  font-weight: 800;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: var(--apple-text-secondary);
+  font-size: 0.98rem;
+  text-align: center;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+/* Apple Bento Category Card */
+.cat-card {
+  background-color: var(--apple-alt);
+  border: 1px solid var(--apple-border);
+  border-radius: 20px;
+  padding: 24px 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cat-card:hover, .cat-card.active {
+  background-color: var(--apple-card);
+  border-color: var(--apple-blue);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-3px);
+}
+
+.cat-icon {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.cat-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: var(--apple-text);
+  font-weight: 700;
+}
+
+.cat-card span {
+  font-size: 0.82rem;
+  color: var(--apple-text-secondary);
+  font-weight: 500;
+}
+/* ==========================================================================
+   Apple Bento Grid Showcase: Engineering & Hygiene Innovation
+   ========================================================================== */
+.apple-bento-section {
+  padding: 85px 0 70px;
+  background-color: var(--apple-bg);
+  border-top: 1px solid var(--apple-border);
+  border-bottom: 1px solid var(--apple-border);
+  transition: var(--transition);
+}
+
+.apple-section-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--apple-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.apple-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.bento-card {
+  background-color: var(--apple-card);
+  border: 1px solid var(--apple-border);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  grid-column: span 6;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 113, 227, 0.35);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.bento-card.bento-wide {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.bento-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--apple-blue);
+  background: var(--apple-pill-bg);
+  border: 1px solid var(--apple-border);
+  border-radius: var(--radius-full);
+  padding: 4px 14px;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.bento-content h3, .bento-card h3 {
+  font-size: clamp(1.22rem, 1.8vw, 1.5rem);
+  font-weight: 800;
+  color: var(--apple-text);
+  margin-bottom: 12px;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+.bento-content p, .bento-card p {
+  font-size: 0.95rem;
+  color: var(--apple-text-secondary);
+  line-height: 1.85;
+}
+
+.bento-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--apple-alt);
+  border-radius: 20px;
+  border: 1px solid var(--apple-border);
+  position: relative;
+}
+
+/* Ultrasonic Wave Rings */
+.wave-graphic {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--apple-blue);
+  border-radius: 50%;
+  animation: pulseRipple 2.4s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+  opacity: 0;
+}
+
+.pulse-ring.ring-1 { animation-delay: 0s; }
+.pulse-ring.ring-2 { animation-delay: 0.8s; }
+.pulse-ring.ring-3 { animation-delay: 1.6s; }
+
+@keyframes pulseRipple {
+  0% { transform: scale(0.4); opacity: 0.9; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.wave-center-icon {
+  font-size: 2.2rem;
+  z-index: 2;
+}
+
+.bento-metric-text {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--apple-blue);
+  letter-spacing: 0.02em;
+}
+
+.bento-tag-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.bento-pill {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--apple-text);
+  background: var(--apple-alt);
+  border: 1px solid var(--apple-border);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+}
+
+.bento-stat-highlight {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: var(--apple-alt);
+  border-radius: 16px;
+  border: 1px solid var(--apple-border);
+}
+
+.bento-stat-highlight strong {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--apple-blue);
+  line-height: 1;
+}
+
+.bento-stat-highlight span {
+  font-size: 0.86rem;
+  color: var(--apple-text-secondary);
+  font-weight: 600;
+}
+
+.delivery-stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.delivery-stat-box .stat-big {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--apple-emerald);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.delivery-stat-box .stat-unit {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--apple-text);
+}
+
+@media (max-width: 860px) {
+  .bento-card {
+    grid-column: span 12;
+  }
+  .bento-card.bento-wide {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Products Section - Apple Store Showcase */
+.products-section {
+  padding: 80px 0;
+}
+
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Apple Segmented Pill Filter Bar */
+.filter-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background-color: var(--apple-card);
+  border: 1px solid var(--apple-border);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--apple-text);
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.pill:hover, .pill.active {
+  background-color: var(--apple-blue);
+  border-color: var(--apple-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 14px var(--apple-blue-glow);
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .pill {
+  background-color: var(--apple-alt);
+  border-color: var(--apple-border);
+  color: var(--apple-text);
+}
+
+[data-theme="dark"] .pill:hover,
+[data-theme="dark"] .pill.active {
+  background: var(--apple-blue);
+  border-color: var(--apple-blue);
+  color: #ffffff;
+  box-shadow: 0 0 18px var(--apple-blue-glow);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 28px;
+}
+
+/* Apple Bento Product Card */
+.product-card {
+  background-color: var(--apple-card);
+  border-radius: 24px;
+  border: 1px solid var(--apple-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(0, 113, 227, 0.3);
+}
+
+[data-theme="dark"] .product-card:hover {
+  border-color: rgba(41, 151, 255, 0.4);
+}
+
+.product-badge-flag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  z-index: 2;
+  letter-spacing: 0.02em;
+}
+
+.product-img-box {
+  width: 100%;
+  height: 240px;
+  background-color: var(--apple-alt);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--apple-border);
+}
+
+.product-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-img-box img {
+  transform: scale(1.05);
+}
+
+.product-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-cat-name {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--apple-blue);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.product-title {
+  font-size: 1.22rem;
+  margin-bottom: 10px;
+  line-height: 1.45;
+  color: var(--apple-text);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.product-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--apple-text-secondary);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.product-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.spec-tag {
+  background-color: var(--apple-pill-bg);
+  border: 1px solid var(--apple-border);
+  color: var(--apple-text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid var(--apple-border);
+  gap: 10px;
+}
+
+.price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 0.76rem;
+  color: var(--apple-text-secondary);
+  font-weight: 500;
+}
+
+.price-val {
+  font-size: 1.1rem;
+  color: #059669;
+  font-weight: 800;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-add-quote {
+  background-color: var(--apple-blue);
+  color: #ffffff;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 2px 8px var(--apple-blue-glow);
+}
+
+.btn-add-quote:hover {
+  background-color: var(--apple-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px var(--apple-blue-glow);
+}
+
+.btn-icon-wa {
+  background-color: #25d366;
+  color: #ffffff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+}
+
+.btn-icon-wa:hover {
+  background-color: #22c55e;
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   Apple Comparison Matrix Section (Cupertino Product Matcher)
+   ========================================================================== */
+.apple-compare-section {
+  padding: 95px 0;
+  background-color: var(--apple-bg);
+  border-top: 1px solid var(--apple-border);
+  border-bottom: 1px solid var(--apple-border);
+  transition: var(--transition);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 48px;
+}
+
+.compare-card {
+  background-color: var(--apple-card);
+  border: 1px solid var(--apple-border);
+  border-radius: var(--radius-xl);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.compare-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(0, 113, 227, 0.3);
+}
+
+.compare-card.featured-card {
+  border-color: var(--apple-blue);
+  box-shadow: 0 8px 32px var(--apple-blue-glow);
+}
+
+.compare-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--apple-blue);
+  background: var(--apple-pill-bg);
+  border: 1px solid var(--apple-border);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  margin: 0 auto 16px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.compare-img-box {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: var(--apple-alt);
+  border-radius: 18px;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid var(--apple-border);
+}
+
+.compare-img-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.compare-card:hover .compare-img-box img {
+  transform: scale(1.06);
+}
+
+.compare-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--apple-text);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.compare-subtitle {
+  font-size: 0.82rem;
+  color: var(--apple-text-secondary);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.compare-price-val {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--apple-blue);
+  margin-bottom: 20px;
+}
+
+.compare-divider {
+  height: 1px;
+  background-color: var(--apple-border);
+  margin: 0 0 20px 0;
+}
+
+.compare-specs-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: right;
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.spec-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+}
+
+.spec-val {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--apple-text);
+}
+
+.compare-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+@media (max-width: 1100px) {
+  .compare-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bulk Order Form Section - Apple Matte Titanium Card */
+.bulk-quote-section {
+  padding: 85px 0;
+  background: #121214;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .bulk-quote-section {
+  background: #000000;
+  border-top: 1px solid var(--apple-border);
+  border-bottom: 1px solid var(--apple-border);
+}
+
+.quote-card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.quote-intro h2 {
+  color: #ffffff;
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  margin: 14px 0 18px;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.quote-intro p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  margin-bottom: 26px;
+  line-height: 1.8;
+}
+
+.badge-tag {
+  background-color: rgba(41, 151, 255, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.quote-bullets {
+  list-style: none;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quote-bullets li {
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fast-call-badge {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fast-call-badge span {
+  font-size: 0.88rem;
+  color: #94a3b8;
+}
+
+.fast-call-badge a {
+  font-size: 1.7rem;
+  color: #38bdf8;
+  font-weight: 900;
+  direction: ltr;
+  text-align: right;
+  letter-spacing: 0.5px;
+}
+
+/* Apple Bento Form Card */
+.quote-form {
+  background-color: var(--apple-card);
+  color: var(--apple-text);
+  padding: 38px 32px;
+  border-radius: 28px;
+  box-shadow: var(--shadow-card-hover);
+  border: 1px solid var(--apple-border);
+  transition: var(--transition);
+}
+
+.quote-form h3 {
+  font-size: 1.35rem;
+  margin-bottom: 22px;
+  color: var(--apple-text);
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+  color: var(--apple-text);
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--apple-border);
+  border-radius: 12px;
+  background-color: var(--apple-alt);
+  color: var(--apple-text);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--apple-blue);
+  background-color: var(--apple-card);
+  box-shadow: 0 0 0 4px var(--apple-blue-glow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-hint {
+  font-size: 0.82rem;
+  color: var(--apple-text-secondary);
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* Articles Section - Apple Bento Grid */
+.articles-section {
+  padding: 85px 0;
+  background-color: var(--apple-bg);
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.article-card {
+  background-color: var(--apple-card);
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid var(--apple-border);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 113, 227, 0.3);
+  box-shadow: var(--shadow-card-hover);
+}
+
+[data-theme="dark"] .article-card:hover {
+  border-color: rgba(41, 151, 255, 0.4);
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.article-cat-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--apple-pill-bg);
+  color: var(--apple-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--apple-border);
+}
+
+.article-time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--apple-text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.article-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  line-height: 1.45;
+  color: var(--apple-text);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.article-card p {
+  font-size: 0.94rem;
+  color: var(--apple-text-secondary);
+  margin-bottom: 20px;
+  flex-grow: 1;
+  line-height: 1.7;
+}
+
+.article-read-more {
+  color: var(--apple-blue);
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.article-read-more:hover {
+  color: var(--apple-blue-hover);
+  transform: translateX(-4px);
+}
+
+/* About Section - Apple Minimalist Story */
+.about-section {
+  padding: 85px 0;
+  background-color: var(--apple-card);
+  border-top: 1px solid var(--apple-border);
+  border-bottom: 1px solid var(--apple-border);
+  transition: var(--transition);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-content h2 {
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  margin: 14px 0 18px;
+  color: var(--apple-text);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  margin-bottom: 26px;
+  color: var(--apple-text-secondary);
+  line-height: 1.85;
+}
+
+.about-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.af-item {
+  background-color: var(--apple-alt);
+  padding: 14px 20px;
+  border-radius: 16px;
+  border-right: 4px solid var(--apple-blue);
+  font-size: 0.95rem;
+  color: var(--apple-text);
+  font-weight: 600;
+  border-top: 1px solid var(--apple-border);
+  border-bottom: 1px solid var(--apple-border);
+  border-left: 1px solid var(--apple-border);
+}
+
+.about-img-box img {
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: var(--shadow-card-hover);
+  border: 1px solid var(--apple-border);
+}
+
+/* ==========================================================================
+   Apple Bento FAQ Section (Accordions with High-Contrast Cupertino Styling)
+   ========================================================================== */
+.faq-section {
+  padding: 85px 0;
+  background-color: var(--apple-bg);
+  border-top: 1px solid var(--apple-border);
+  border-bottom: 1px solid var(--apple-border);
+  transition: var(--transition);
+}
+
+.faq-section .section-title {
+  color: var(--apple-text);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.faq-section .section-subtitle {
+  color: var(--apple-text-secondary);
+  font-size: 1rem;
+}
+
+.faq-accordion {
+  max-width: 860px;
+  margin: 36px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background-color: var(--apple-card);
+  border: 1px solid var(--apple-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item:hover {
+  border-color: rgba(0, 113, 227, 0.35);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.faq-question {
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--apple-text);
+  background-color: var(--apple-card);
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.faq-question:hover {
+  color: var(--apple-blue);
+}
+
+.faq-question svg {
+  stroke: var(--apple-blue);
+  color: var(--apple-blue);
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.active .faq-question svg {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  padding: 0 26px;
+  background-color: var(--apple-alt);
+  color: var(--apple-text);
+  font-size: 0.96rem;
+  line-height: 1.85;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 18px 26px 24px;
+  border-top: 1px solid var(--apple-border);
+}
+
+[data-theme="dark"] .faq-section {
+  background-color: var(--apple-bg) !important;
+}
+
+[data-theme="dark"] .faq-section .section-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .faq-section .section-subtitle {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .faq-item {
+  background-color: var(--apple-card) !important;
+  border-color: var(--apple-border) !important;
+}
+
+[data-theme="dark"] .faq-item:hover {
+  border-color: rgba(41, 151, 255, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .faq-question {
+  background-color: var(--apple-card) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .faq-answer {
+  background-color: #1a1a1c !important;
+  color: #f1f5f9 !important;
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Main Footer */
+.main-footer {
+  background-color: var(--primary-navy-dark);
+  color: #ffffff;
+  padding-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1.2fr 1fr;
+  gap: 36px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  max-height: 48px;
+  width: auto;
+  margin-bottom: 16px;
+}
+
+.footer-about {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.footer-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.footer-title {
+  color: #ffffff;
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--accent-cyan);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #38bdf8;
+  padding-right: 4px;
+}
+
+.footer-contact-info p {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  margin-bottom: 12px;
+}
+
+.footer-contact-info a {
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.footer-bottom {
+  background-color: #040c1a;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Floating Actions */
+.floating-actions {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  right: auto;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.float-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.float-btn:hover {
+  transform: scale(1.12);
+}
+
+.float-wa {
+  background-color: #22c55e;
+}
+
+.float-phone {
+  background-color: #0284c7;
+}
+
+/* Cart Drawer */
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.cart-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 380px;
+  height: 100vh;
+  background-color: var(--apple-card);
+  color: var(--apple-text);
+  z-index: 999;
+  box-shadow: 6px 0 32px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 28px;
+  border-radius: 0 28px 28px 0;
+  border-right: 1px solid var(--apple-border);
+}
+
+.cart-drawer.active {
+  left: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--apple-border);
+}
+
+.drawer-header h3 {
+  font-size: 1.25rem;
+  color: var(--apple-text);
+  font-weight: 700;
+}
+
+.close-drawer {
+  background: var(--apple-pill-bg);
+  border: 1px solid var(--apple-border);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--apple-text);
+  transition: all 0.2s ease;
+}
+
+.close-drawer:hover {
+  background-color: var(--apple-alt);
+  color: var(--apple-blue);
+}
+
+.drawer-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty-cart-msg {
+  text-align: center;
+  color: var(--apple-text-secondary);
+  font-size: 0.95rem;
+  padding: 50px 10px;
+}
+
+.cart-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--apple-alt);
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--apple-border);
+  transition: all 0.2s ease;
+}
+
+.remove-item-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 800;
+  transition: transform 0.2s ease;
+}
+
+.remove-item-btn:hover {
+  transform: scale(1.15);
+}
+
+.drawer-footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--apple-border);
+}
+
+/* Apple Dynamic Island Style Toast Notification */
+.toast-notify {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background-color: rgba(22, 22, 23, 0.92);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.92rem;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1000;
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast-notify.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   Responsive Design (Comprehensive Breakpoints)
+   ========================================================================== */
+
+/* 1. Large Tablets & Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .quote-card-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 2. Tablets & Mobile Breakpoint (<= 992px) - Switch to Mobile Drawer Navigation */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+  }
+  .logo-tagline {
+    display: none !important; /* Hide secondary tagline to keep header compact */
+  }
+  .header-logo {
+    height: 42px;
+    max-height: 44px;
+    max-width: 140px;
+  }
+  .header-cta .header-cta-text {
+    display: none !important; /* Hide WhatsApp button text on tablet/mobile */
+  }
+  .header-cta {
+    width: 38px;
+    height: 38px;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+  }
+  .header-cta svg {
+    margin: 0;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .theme-toggle-btn, .cart-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero-text {
+    display: contents;
+  }
+  .hero-badge {
+    order: 1;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    order: 2;
+    font-size: 2.1rem;
+    margin-bottom: 16px;
+  }
+  .hero-image-wrapper {
+    order: 3;
+    margin: 10px 0 24px 0;
+    width: 100%;
+  }
+  .hero-cta-group {
+    order: 4;
+    margin-bottom: 22px;
+  }
+  .hero-description {
+    order: 5;
+    margin-bottom: 20px;
+  }
+  .hero-features {
+    order: 6;
+    margin-bottom: 24px;
+  }
+  .trust-counter {
+    order: 7;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3. Small Tablets & Phones (<= 768px) */
+@media (max-width: 768px) {
+  /* Hide crowded secondary subnav on mobile (Apple standard mobile behavior) */
+  .apple-subnav {
+    display: none !important;
+  }
+  .announcement-bar {
+    font-size: 0.76rem;
+    padding: 4px 0;
+  }
+  .announcement-content {
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+  }
+  .announcement-links {
+    display: none;
+  }
+  .hero-section {
+    padding: 28px 0 44px;
+  }
+  .hero-text {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hero-badge {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-self: center !important;
+  }
+  .hero-title {
+    font-size: 1.7rem;
+    line-height: 1.45;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero-description {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero-features {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .feat-item {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+  .trust-counter {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px 10px;
+    gap: 8px;
+    justify-content: space-between;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .counter-num {
+    font-size: 1.3rem;
+  }
+  .counter-lbl {
+    font-size: 0.75rem;
+  }
+  .counter-divider {
+    height: 28px;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .category-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .category-tab-btn {
+    white-space: nowrap;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* 4. Compact Mobile Devices (<= 576px) */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  .header-container {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    gap: 10px !important;
+  }
+  .header-logo {
+    height: 38px;
+    max-width: 130px;
+  }
+  /* On small mobile: hide header WhatsApp button completely because floating WA is right there */
+  .header-cta {
+    display: none !important;
+  }
+  .theme-toggle-btn, .cart-btn, .mobile-toggle {
+    width: 38px;
+    height: 38px;
+  }
+  .hero-title {
+    font-size: 1.55rem;
+    line-height: 1.45;
+  }
+  .hero-features {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .floating-badge {
+    padding: 5px 10px;
+  }
+  .badge-num {
+    font-size: 0.95rem;
+  }
+  .badge-sub {
+    font-size: 0.68rem;
+  }
+  .badge-top-right {
+    top: 10px;
+    right: 10px;
+  }
+  .badge-bottom-left {
+    bottom: 10px;
+    left: 10px;
+  }
+  /* Floating WhatsApp Button Size on Mobile */
+  .floating-actions {
+    bottom: 18px;
+    left: 16px;
+    gap: 10px;
+  }
+  .float-btn {
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  }
+  .float-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+  .product-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .card-actions {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+  .btn-add-quote {
+    flex: 1;
+  }
+  .modal-header-bar {
+    padding: 12px 16px;
+  }
+  .modal-header-bar h3 {
+    font-size: 1.05rem;
+  }
+}
+
+/* ==========================================================================
+   Admin Management Panel, Modals, Search & Interactive Components
+   High-Contrast Medical Industrial Design (Rule 99 Compliant)
+   ========================================================================== */
+
+/* Admin Trigger Button (Hidden from public view per user request) */
+.admin-trigger-btn {
+  display: none !important;
+}
+
+.secret-admin-lock {
+  cursor: pointer;
+  opacity: 0.25;
+  transition: opacity 0.2s ease;
+  font-size: 0.95rem;
+  padding: 2px 6px;
+  display: inline-block;
+}
+
+.secret-admin-lock:hover {
+  opacity: 1;
+}
+
+/* Catalog Search and Filter Controls */
+.catalog-controls {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-box-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 280px;
+  max-width: 480px;
+}
+
+.search-box-wrapper input {
+  width: 100%;
+  padding: 12px 44px 12px 16px;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.search-box-wrapper input:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
+}
+
+.search-box-wrapper .search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0f172a;
+  pointer-events: none;
+}
+
+/* Product Card Enhanced Buttons */
+.card-actions-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-view-detail {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-view-detail:hover {
+  background-color: #0f2347;
+  color: #ffffff;
+  border-color: #0f2347;
+}
+
+/* General Modal System */
+.custom-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom-modal-dialog {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.35);
+  width: 100%;
+  max-width: 920px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cbd5e1;
+  transform: scale(0.94);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.custom-modal-overlay.active .custom-modal-dialog {
+  transform: scale(1);
+}
+
+.modal-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: #0f2347;
+  color: #ffffff;
+  border-bottom: 2px solid #0284c7;
+}
+
+.modal-header-bar h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+  color: #f87171;
+  transform: scale(1.15);
+}
+
+.modal-content-scroll {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Product Detail Modal Specifics */
+.prod-detail-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+}
+
+.prod-detail-img-box {
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 340px;
+}
+
+.prod-detail-img-box img {
+  max-width: 100%;
+  max-height: 310px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.prod-detail-info h2 {
+  font-size: 1.4rem;
+  color: #0f2347;
+  margin-bottom: 12px;
+}
+
+.detail-specs-table {
+  width: 100%;
+  margin: 16px 0;
+  border-collapse: collapse;
+}
+
+.detail-specs-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.detail-specs-table td.label-td {
+  font-weight: 700;
+  color: #0f172a;
+  width: 35%;
+  background-color: #f8fafc;
+}
+
+.detail-specs-table td.val-td {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Admin Dashboard Styling */
+.admin-modal-dialog {
+  max-width: 1150px;
+  height: 88vh;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  height: 100%;
+  overflow: hidden;
+}
+
+.admin-sidebar {
+  background-color: #0b1528;
+  color: #ffffff;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 2px solid #1e293b;
+}
+
+.admin-sidebar-header {
+  padding: 0 12px 16px 12px;
+  border-bottom: 1px solid #1e293b;
+  margin-bottom: 8px;
+}
+
+.admin-sidebar-header h4 {
+  color: #38bdf8;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.admin-sidebar-header p {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.admin-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  background: transparent;
+  color: #e2e8f0;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  font-size: 0.94rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: right;
+}
+
+.admin-nav-btn:hover {
+  background-color: #1e293b;
+  color: #38bdf8;
+}
+
+.admin-nav-btn.active {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+}
+
+.admin-nav-badge {
+  margin-right: auto;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  font-weight: 800;
+}
+
+.admin-body-pane {
+  background-color: #f8fafc;
+  padding: 24px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.admin-tab-section {
+  display: none;
+}
+
+.admin-tab-section.active {
+  display: block;
+}
+
+/* Stat Cards */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid #cbd5e1;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-info h5 {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.stat-info strong {
+  font-size: 1.8rem;
+  color: #0f172a;
+  font-weight: 900;
+}
+
+.stat-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.stat-icon-blue { background-color: #e0f2fe; color: #0284c7; }
+.stat-icon-green { background-color: #dcfce7; color: #16a34a; }
+.stat-icon-amber { background-color: #fef3c7; color: #d97706; }
+.stat-icon-purple { background-color: #f3e8ff; color: #9333ea; }
+
+/* Admin Data Table */
+.admin-table-wrapper {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+  font-size: 0.92rem;
+}
+
+.admin-table th {
+  background-color: #0f2347;
+  color: #ffffff;
+  padding: 12px 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #0f172a;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.admin-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+.table-thumb {
+  width: 45px;
+  height: 45px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 1px solid #cbd5e1;
+}
+
+.action-btn-group {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-admin-edit {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.btn-admin-del {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.badge-tag-status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.badge-status-new { background-color: #dbeafe; color: #1e40af; }
+.badge-status-done { background-color: #dcfce7; color: #166534; }
+
+/* Admin Form Controls */
+.admin-form-box {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.admin-form-box h4 {
+  color: #0f2347;
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.admin-form-box .form-group {
+  margin-bottom: 14px;
+}
+
+.admin-form-box label {
+  display: block;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.admin-form-box input, 
+.admin-form-box select, 
+.admin-form-box textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-family);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+}
+
+.admin-form-box input:focus,
+.admin-form-box select:focus,
+.admin-form-box textarea:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* Article Reader Modal */
+.article-reader-container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.article-reader-header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.article-reader-header h2 {
+  font-size: 1.6rem;
+  color: #0f2347;
+  margin-bottom: 10px;
+}
+
+.article-reader-meta {
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.article-reader-body {
+  color: #0f172a;
+  font-size: 1.05rem;
+  line-height: 2;
+}
+
+.article-reader-body p {
+  margin-bottom: 16px;
+}
+
+/* Responsive adjustments for admin */
+@media (max-width: 860px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .admin-sidebar {
+    border-left: none;
+    border-bottom: 2px solid #1e293b;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  .admin-sidebar-header {
+    display: none;
+  }
+  .admin-nav-btn {
+    white-space: nowrap;
+    padding: 8px 12px;
+  }
+  .prod-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Comprehensive Dark Theme Styling (تم شب لوکس و مدرن)
+   ========================================================================== */
+[data-theme="dark"] body {
+  background-color: #070d1e;
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .main-header {
+  background-color: rgba(7, 13, 30, 0.92);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .announcement-bar {
+  background: linear-gradient(90deg, #04091a 0%, #0d1e3d 100%);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+[data-theme="dark"] .nav-item {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .nav-item:hover,
+[data-theme="dark"] .nav-item.active {
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .hero-section {
+  background: radial-gradient(circle at 15% 25%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.09) 0%, transparent 45%),
+              linear-gradient(180deg, #070d1e 0%, #0b152d 100%);
+}
+
+[data-theme="dark"] .hero-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .hero-subtitle {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .hero-badge-live {
+  background: rgba(15, 26, 54, 0.85);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.15);
+}
+
+[data-theme="dark"] .hero-stat-card {
+  background: var(--apple-card);
+  border-color: var(--apple-border);
+  backdrop-filter: blur(16px);
+}
+
+[data-theme="dark"] .hero-stat-num {
+  color: var(--apple-blue);
+}
+
+[data-theme="dark"] .hero-stat-label {
+  color: var(--apple-text-secondary);
+}
+
+[data-theme="dark"] .section-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .section-subtitle {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .article-card,
+[data-theme="dark"] .feature-item,
+[data-theme="dark"] .quote-form,
+[data-theme="dark"] .about-content-box {
+  background-color: var(--apple-card);
+  border: 1px solid var(--apple-border);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="dark"] .quote-form h3 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .about-section {
+  background-color: var(--apple-bg);
+}
+
+[data-theme="dark"] .about-content h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .about-content p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .af-item {
+  background-color: var(--apple-alt);
+  border-right-color: var(--apple-blue);
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .categories-section {
+  background-color: var(--apple-bg);
+  border-color: var(--apple-border);
+}
+
+[data-theme="dark"] .cat-card {
+  background-color: var(--apple-card);
+  border-color: var(--apple-border);
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .cat-card h3 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .cat-card:hover,
+[data-theme="dark"] .cat-card.active {
+  background-color: var(--apple-alt);
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 18px var(--apple-blue-glow);
+}
+
+[data-theme="dark"] .trust-counter {
+  background-color: var(--apple-card);
+  border-color: var(--apple-border);
+}
+
+[data-theme="dark"] .counter-num {
+  color: var(--apple-blue);
+}
+
+[data-theme="dark"] .counter-lbl {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .counter-divider {
+  background-color: var(--apple-border);
+}
+
+[data-theme="dark"] .floating-badge {
+  background: rgba(22, 22, 23, 0.94);
+  border-color: var(--apple-border);
+}
+
+[data-theme="dark"] .badge-sub {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .catalog-controls {
+  background-color: var(--apple-card);
+  border-color: var(--apple-border);
+}
+
+[data-theme="dark"] #productSearchInput {
+  background-color: var(--apple-alt);
+  color: #ffffff;
+  border-color: var(--apple-border);
+}
+
+[data-theme="dark"] #searchResultsCount {
+  color: var(--apple-blue) !important;
+}
+
+[data-theme="dark"] .product-card:hover,
+[data-theme="dark"] .article-card:hover {
+  border-color: var(--apple-blue);
+  box-shadow: 0 12px 36px var(--apple-blue-glow);
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .product-title,
+[data-theme="dark"] .article-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .product-desc,
+[data-theme="dark"] .article-excerpt {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .product-card-footer {
+  border-top: 1px solid var(--apple-border);
+}
+
+[data-theme="dark"] .category-tab-btn {
+  background-color: #132247;
+  border-color: #1e3567;
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .category-tab-btn:hover,
+[data-theme="dark"] .category-tab-btn.active {
+  background: var(--apple-blue);
+  color: #ffffff;
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 16px var(--apple-blue-glow);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea {
+  background-color: #1d1d1f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group select:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  border-color: var(--apple-blue);
+  background-color: #242426;
+  box-shadow: 0 0 0 3px var(--apple-blue-glow);
+}
+
+[data-theme="dark"] .form-group label {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .cart-drawer {
+  background-color: #161617;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .cart-drawer-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .cart-item-card {
+  background-color: #1d1d1f;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .cart-drawer-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #161617;
+}
+
+[data-theme="dark"] .article-modal-content {
+  background-color: #161617;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .article-reader-header h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .article-reader-body {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .footer {
+  background-color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .footer-col h4 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .footer-links a {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .footer-links a:hover {
+  color: var(--apple-blue);
+}
+
+[data-theme="dark"] .admin-modal-content {
+  background-color: #161617;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .admin-sidebar {
+  background-color: #121214;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .admin-form-box,
+[data-theme="dark"] .admin-stat-card {
+  background-color: #1d1d1f;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .admin-table {
+  background-color: #161617;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .admin-table th {
+  background-color: #1d1d1f;
+  color: var(--apple-blue);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .admin-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .mobile-nav {
+  background-color: #161617;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .mobile-link {
+  color: #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .mobile-link:hover {
+  background-color: #1d1d1f;
+  color: var(--apple-blue);
+}
+
+/* ==========================================
+   13. MULTILINGUAL & LANGUAGE SWITCHER
+   ========================================== */
+.lang-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  background-color: rgba(2, 132, 199, 0.08);
+  border: 1.5px solid rgba(2, 132, 199, 0.28);
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lang-switch-btn:hover {
+  background-color: var(--accent-cyan);
+  color: #ffffff;
+  border-color: var(--accent-cyan);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="dark"] .lang-switch-btn {
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+[data-theme="dark"] .lang-switch-btn:hover {
+  background-color: #38bdf8;
+  color: #04091a;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+}
+
+.lang-mobile-btn {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   14. LTR (ENGLISH VERSION) COMPREHENSIVE STYLES
+   ========================================== */
+html[dir="ltr"] body {
+  direction: ltr;
+  text-align: left;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+html[dir="ltr"] .header-container {
+  flex-direction: row;
+}
+
+html[dir="ltr"] .logo-tagline {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+html[dir="ltr"] .nav-item::after {
+  right: auto;
+  left: 0;
+}
+
+html[dir="ltr"] .hero-features .feat-item {
+  flex-direction: row;
+}
+
+html[dir="ltr"] .hero-features .feat-item svg {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+html[dir="ltr"] .badge-top-right {
+  right: -15px;
+  left: auto;
+}
+
+html[dir="ltr"] .badge-bottom-left {
+  left: -15px;
+  right: auto;
+}
+
+html[dir="ltr"] .product-badge-flag {
+  right: auto;
+  left: 14px;
+}
+
+html[dir="ltr"] .cart-drawer {
+  left: auto;
+  right: -390px;
+  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.18);
+  transition: right 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[dir="ltr"] .cart-drawer.active {
+  right: 0;
+  left: auto;
+}
+
+html[dir="ltr"] .mobile-nav {
+  right: auto;
+  left: -320px;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html[dir="ltr"] .mobile-nav.active {
+  left: 0;
+  right: auto;
+}
+
+html[dir="ltr"] .floating-actions {
+  right: 20px;
+  left: auto;
+}
+
+html[dir="ltr"] .quote-bullets li {
+  text-align: left;
+}
+
+html[dir="ltr"] .faq-question {
+  text-align: left;
+}
+
+html[dir="ltr"] .faq-answer {
+  text-align: left;
+}
+
+html[dir="ltr"] .about-features-list .af-item {
+  text-align: left;
+}
+
+html[dir="ltr"] .footer-grid {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir="ltr"] .footer-bottom-inner {
+  flex-direction: row;
+}
+
+
